@@ -8,6 +8,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using DotNet.Core.Runtime.Faker;
+using System.Net;
 
 namespace DotNet.Core.Faker.Runtime.Integration.Tests
 {
@@ -50,7 +51,7 @@ namespace DotNet.Core.Faker.Runtime.Integration.Tests
             serviceProvider.Change<Clock>(new MyClock());
 
             var result = await cliente.GetAsync("time");
-            result.StatusCode.Should().Be(200);
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
 
             var content = await result.Content.ReadAsStringAsync();
 

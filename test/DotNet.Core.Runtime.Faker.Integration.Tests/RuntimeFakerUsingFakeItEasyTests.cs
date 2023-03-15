@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using FakeItEasy;
 using DotNet.Core.Runtime.Faker.FakeItEasy;
 using DotNet.Core.Runtime.Faker;
+using System.Net;
 
 namespace DotNet.Core.Faker.Runtime.Integration.Tests
 {
@@ -50,7 +51,7 @@ namespace DotNet.Core.Faker.Runtime.Integration.Tests
         public async Task ShouldGetRegisteredValueForClock()
         {
             var result = await cliente.GetAsync("time");
-            result.StatusCode.Should().Be(200);
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
 
             var content = await result.Content.ReadAsStringAsync();
 
@@ -64,7 +65,7 @@ namespace DotNet.Core.Faker.Runtime.Integration.Tests
             serviceProvider.Change<Clock>(faker => A.CallTo(() => faker.Now()).Returns(now));
 
             var result = await cliente.GetAsync("time");
-            result.StatusCode.Should().Be(200);
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
 
             var content = await result.Content.ReadAsStringAsync();
 
@@ -78,7 +79,7 @@ namespace DotNet.Core.Faker.Runtime.Integration.Tests
             serviceProvider.ResetAllChanges();
 
             var result = await cliente.GetAsync("time");
-            result.StatusCode.Should().Be(200);
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
 
             var content = await result.Content.ReadAsStringAsync();
 
