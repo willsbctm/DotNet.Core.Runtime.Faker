@@ -1,4 +1,3 @@
-using DotNet.Core.Faker.Runtime.WebApi.Sample;
 using DotNet.Core.Runtime.Faker.WebApi.Sample;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -16,7 +15,7 @@ namespace DotNet.Core.Faker.Runtime.Integration.Tests
     public class RuntimeFakerUsingMoqTests
     {
         private DateTime registeredValue;
-        private static WebApplicationFactory<Startup> factory;
+        private static WebApplicationFactory<Program> factory;
         private static IServiceProvider serviceProvider;
         private HttpClient cliente;
 
@@ -25,7 +24,7 @@ namespace DotNet.Core.Faker.Runtime.Integration.Tests
         {
             registeredValue = new Bogus.Faker().Date.Future();
 
-            factory = new WebApplicationFactory<Startup>().WithWebHostBuilder(builder =>
+            factory = new WebApplicationFactory<Program>().WithWebHostBuilder(builder =>
                 builder.ConfigureTestServices(services =>
                 {
                     services.AddServiceWithFaker<Clock>(mock => mock.Setup(x => x.Now()).Returns(registeredValue));

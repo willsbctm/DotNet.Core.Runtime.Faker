@@ -1,7 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+      <TargetFramework>net7.0</TargetFramework>
+	  <PackageId>Luna.DotNet.Core.Runtime.Faker.Moq</PackageId>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <Authors>William Espinosa de Rezende</Authors>
+	  <PackageDescription>Biblioteca para troca de dependências em tempo de execução dos testes com Moq</PackageDescription>
+	  <PackageTags>dotnet core; tests; moq;</PackageTags>
+	  <RepositoryUrl>https://github.com/willsbctm/DotNet.Core.Runtime.Faker</RepositoryUrl>
+	  <RepositoryBranch>main</RepositoryBranch>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

@@ -32,4 +32,4 @@ jobs:
       run: dotnet build $SOLUTION -c $BUILD_CONFIG --no-restore
 
     - name: Run tests
-      run: dotnet test -c $BUILD_CONFIG --no-restore --no-build 
+      run: dotnet test  --logger trx -c $BUILD_CONFIG --no-restore --no-build 
