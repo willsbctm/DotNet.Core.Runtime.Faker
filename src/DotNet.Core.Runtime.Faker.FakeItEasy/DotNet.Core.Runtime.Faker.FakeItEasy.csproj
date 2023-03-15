@@ -2,7 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+	  <PackageId>Luna.DotNet.Core.Runtime.Faker.FakeItEasy</PackageId>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <Authors>William Espinosa de Rezende</Authors>
+	  <PackageDescription>Biblioteca para troca de dependências em tempo de execução dos testes com FakeItEasy</PackageDescription>
+	  <PackageTags>dotnet core; tests; fakeiteasy;</PackageTags>
+	  <RepositoryUrl>https://github.com/willsbctm/DotNet.Core.Runtime.Faker</RepositoryUrl>
+	  <RepositoryBranch>main</RepositoryBranch>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FakeItEasy" Version="7.3.1" />
